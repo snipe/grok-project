@@ -11,10 +11,44 @@
 |
 */
 
+//Route::get('crud-test', function () {
+//    return view('crud');
+//});
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => 'auth'], function () {
+
+    /*
+    * Companies
+    */
+    Route::resource('company', 'CompanyController')->only([
+        'index', 'show'
+    ]);
+
+
+    /*
+    * Projects
+    */
+    Route::resource('project', 'ProjectsController', [
+        'parameters' => ['project' => 'project_id']
+    ]);
+
+});
+
+
+
+
+
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+
 Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
