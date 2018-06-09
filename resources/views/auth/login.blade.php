@@ -48,16 +48,8 @@
 
                 <div class="form-group">
                     <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" />
-                        <span class="custom-control-label">Remember me</span>
-                    </label>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                        <span class="custom-control-label" style="padding-left: 30px;">{{ __('Remember Me') }}</span>
+                        <span class="custom-control-label">{{ __('Remember Me') }}</span>
                     </label>
                 </div>
 
