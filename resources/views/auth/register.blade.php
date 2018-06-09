@@ -9,7 +9,7 @@
 
                 <!-- name -->
                 <div class="form-group">
-                    <label for="name" class="form-label">{{ __('Name') }}</label>
+                    <label for="name" class="form-label">{{ __('Name') }}<span class="form-required">*</span></label>
                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? '  is-invalid state-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Enter name" autofocus>
 
                     @if ($errors->has('name'))
@@ -19,7 +19,10 @@
 
                 <!-- name -->
                 <div class="form-group">
-                    <label for="company_name" class="form-label">{{ __('Company Name') }}</label>
+                    <label for="company_name" class="form-label">
+                        {{ __('Company Name') }}
+                        <span class="form-required">*</span>
+                    </label>
                     <input id="company_name" type="text" class="form-control{{ $errors->has('company_name') ? '  is-invalid state-invalid' : '' }}" name="company_name" value="{{ old('company_name') }}" placeholder="Enter Company Name" autofocus>
 
                     @if ($errors->has('company_name'))
@@ -30,7 +33,10 @@
 
                 <!-- email -->
                 <div class="form-group">
-                    <label for="email" class="form-label">{{ __('E-Mail Address') }}</label>
+                    <label for="email" class="form-label">
+                        {{ __('E-Mail Address') }}
+                        <span class="form-required">*</span>
+                    </label>
                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? '  is-invalid state-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Enter email" autofocus>
 
                     @if ($errors->has('email'))
@@ -40,7 +46,9 @@
 
                 <!-- password -->
                 <div class="form-group">
-                    <label for="password" class="form-label">{{ __('Password') }}
+                    <label for="password" class="form-label">
+                        {{ __('Password') }}
+                        <span class="form-required">*</span>
                     </label>
                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? '  is-invalid state-invalid' : '' }}" name="password" value="{{ old('password') }}" autofocus>
 
@@ -51,7 +59,9 @@
 
                 <!-- confirm password -->
                 <div class="form-group">
-                    <label for="password_confirmation" class="form-label">{{ __('Confirm Password') }}
+                    <label for="password_confirmation" class="form-label">
+                        {{ __('Confirm Password') }}
+                        <span class="form-required">*</span>
                     </label>
 
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" {{ $errors->has('password_confirmation') ? '  is-invalid state-invalid' : '' }}>

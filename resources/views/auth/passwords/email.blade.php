@@ -18,7 +18,10 @@
                     <!-- email -->
 
                 <div class="form-group">
-                    <label for="email" class="form-label">{{ __('E-Mail Address') }}</label>
+                    <label for="email" class="form-label">
+                        {{ __('E-Mail Address') }}
+                        <span class="form-required">*</span>
+                    </label>
                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? '  is-invalid state-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Enter email" autofocus>
 
                     @if ($errors->has('email'))
