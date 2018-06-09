@@ -156,7 +156,7 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item">
-                                <a href="{{ route('home') }}" class="nav-link"><i class="fe fe-home"></i> Home</a>
+                                <a href="{{ route('home') }}" class="nav-link"><i class="fe fe-home"></i> {{ __('Home') }}</a>
                             </li>
                             @if (Auth::user()->projects->count() > 0)
                             <li class="nav-item">
@@ -166,12 +166,12 @@
                                         <a class="dropdown-item" href="{{ route('project.show', ['id' => $user_projects->id ]) }}">{{ $user_projects->name }}</a>
                                     @endforeach
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Create a Project</a>
+                                        <a class="dropdown-item" href="#">{{ __('New Project') }}</a>
                                 </div>
                             </li>
                             @endif
                             <li class="nav-item">
-                                <a href="#" class="nav-link"><i class="fe fe-home"></i> New Project</a>
+                                <a href="#" class="nav-link"><i class="fe fe-home"></i> {{ __('New Project') }}</a>
                             </li>
 
                         </ul>
@@ -180,9 +180,12 @@
             </div>
             @endguest
         </div>
-        <div class="my-3 my-md-5">
-            <!-- begin page content -->
-            @yield('content')
+        <div class="my-3 my-md-12">
+            <div class="container">
+                <!-- begin page content -->
+                @yield('content')
+            </div>
+
         </div>
 
     </div>
