@@ -38,5 +38,9 @@ class User extends Authenticatable
         return $this->hasMany('\App\Project', 'user_id');
     }
 
+    public function avatar() {
+        return "//gravatar.com/avatar/".md5(strtolower(trim($this->email)));
+    }
+
 
 }
