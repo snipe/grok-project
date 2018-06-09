@@ -17,7 +17,7 @@
                             @foreach($companies as $company)
                                 <tr>
                                     <td>
-                                        <a href="{{ route('company.show', ['id' => $company->id]) }}">{{ $company->name }}</a>
+                                        {{ $company->name }}
                                     </td>
                                     <td>
                                         @foreach($company->projects as $project)
