@@ -158,6 +158,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('home') }}" class="nav-link"><i class="fe fe-home"></i> Home</a>
                             </li>
+                            @if (Auth::user()->projects->count() > 0)
                             <li class="nav-item">
                                 <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Projects</a>
                                 <div class="dropdown-menu dropdown-menu-arrow">
@@ -167,6 +168,10 @@
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#">Create a Project</a>
                                 </div>
+                            </li>
+                            @endif
+                            <li class="nav-item">
+                                <a href="#" class="nav-link"><i class="fe fe-home"></i> New Project</a>
                             </li>
 
                         </ul>
@@ -213,7 +218,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 mt-4 mt-lg-0">
-                    Premium and Open Source dashboard template with responsive and high quality UI. For Free!
+                    Create test plans and test cases right from your requirements documents!
                 </div>
             </div>
         </div>
@@ -225,8 +230,8 @@
                     <div class="row align-items-center">
                         <div class="col-auto">
                             <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="./docs/index.html">Documentation</a></li>
-                                <li class="list-inline-item"><a href="./faq.html">FAQ</a></li>
+                                <li class="list-inline-item"><a href="#l">Documentation</a></li>
+                                <li class="list-inline-item"><a href="#">FAQ</a></li>
                             </ul>
                         </div>
                         <div class="col-auto">
@@ -235,7 +240,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-                    Copyright © 2018 <a href=".">Tabler</a>. Theme by <a href="https://codecalm.net" target="_blank">codecalm.net</a> All rights reserved.
+                    Copyright © {{ date('Y') }} <a href="{{ config('app.url') }}">{{ config('app.name') }}</a>. All rights reserved.
                 </div>
             </div>
         </div>
