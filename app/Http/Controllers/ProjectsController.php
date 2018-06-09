@@ -1,15 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Section;
+use Auth;
 
 class ProjectsController extends Controller
 {
     public function index()
     {
-        return response(Project::all()->jsonSerialize(), 200);
+        $projects = Project::where('user_id', Auth::user()->id)->with('companies')->get();
+        return view('projects.index')->with('projects', $projects);
+    }
+
+    public function show($project_id) {
+        $project = Project::with('testenvs')->find($project_id);
+        $sections = Section::where('project_id', $project_id)->where('parent_id',0)->with('requirements', 'testcases', 'subsections')->get();
+        return view('projects.show')->with('sections', $sections)->with('project', $project);
     }
 
     public function create(Request $request)

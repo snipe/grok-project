@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Project;
+use App\Company;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $companies = Company::where('user_id', Auth::user()->id)->with('projects')->get();
+        return view('home')->with('companies', $companies);
     }
 }
