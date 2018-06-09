@@ -133,7 +133,7 @@
                     <li class="list-separated-item">
                         <div class="row align-items-center">
                             <div class="col-auto">
-                                <span class="avatar avatar-md d-block" style="background-image: url(demo/faces/female/12.jpg)"></span>
+                                <span class="avatar avatar-md d-block" style="background-image: url(https://picsum.photos/100/100/?random)"></span>
                             </div>
                             <div class="col">
                                 <div>
@@ -158,7 +158,7 @@
                     <li class="list-separated-item">
                         <div class="row align-items-center">
                             <div class="col-auto">
-                                <span class="avatar avatar-md d-block" style="background-image: url(demo/faces/female/21.jpg)"></span>
+                                <span class="avatar avatar-md d-block" style="background-image: url(https://picsum.photos/50/50/?random)"></span>
                             </div>
                             <div class="col">
                                 <div>
@@ -183,7 +183,7 @@
                     <li class="list-separated-item">
                         <div class="row align-items-center">
                             <div class="col-auto">
-                                <span class="avatar avatar-md d-block" style="background-image: url(demo/faces/female/29.jpg)"></span>
+                                <span class="avatar avatar-md d-block" style="background-image: url(https://picsum.photos/30/30/?random)"></span>
                             </div>
                             <div class="col">
                                 <div>
@@ -208,7 +208,7 @@
                     <li class="list-separated-item">
                         <div class="row align-items-center">
                             <div class="col-auto">
-                                <span class="avatar avatar-md d-block" style="background-image: url(demo/faces/female/2.jpg)"></span>
+                                <span class="avatar avatar-md d-block" style="background-image: url(https://picsum.photos/200/300/?random)"></span>
                             </div>
                             <div class="col">
                                 <div>
@@ -230,56 +230,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="list-separated-item">
-                        <div class="row align-items-center">
-                            <div class="col-auto">
-                                <span class="avatar avatar-md d-block" style="background-image: url(demo/faces/male/34.jpg)"></span>
-                            </div>
-                            <div class="col">
-                                <div>
-                                    <a href="javascript:void(0)" class="text-inherit">Edward Larson</a>
-                                </div>
-                                <small class="d-block item-except text-sm text-muted h-1x">edward90@example.com</small>
-                            </div>
-                            <div class="col-auto">
-                                <div class="item-action dropdown">
-                                    <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-separated-item">
-                        <div class="row align-items-center">
-                            <div class="col-auto">
-                                <span class="avatar avatar-md d-block" style="background-image: url(demo/faces/female/11.jpg)"></span>
-                            </div>
-                            <div class="col">
-                                <div>
-                                    <a href="javascript:void(0)" class="text-inherit">Joan Hanson</a>
-                                </div>
-                                <small class="d-block item-except text-sm text-muted h-1x">joan.hanson@example.com</small>
-                            </div>
-                            <div class="col-auto">
-                                <div class="item-action dropdown">
-                                    <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
-                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
-                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
         </div>
