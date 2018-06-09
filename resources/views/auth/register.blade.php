@@ -17,11 +17,21 @@
                     @endif
                 </div>
 
+                <!-- name -->
+                <div class="form-group">
+                    <label for="company_name" class="form-label">{{ __('Company Name') }}</label>
+                    <input id="company_name" type="text" class="form-control{{ $errors->has('company_name') ? '  is-invalid state-invalid' : '' }}" name="company_name" value="{{ old('company_name') }}" placeholder="Enter Company Name" autofocus>
+
+                    @if ($errors->has('company_name'))
+                        <div class="invalid-feedback"> {{ $errors->first('company_name') }} </div>
+                    @endif
+                </div>
+
 
                 <!-- email -->
                 <div class="form-group">
                     <label for="email" class="form-label">{{ __('E-Mail Address') }}</label>
-                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? '  is-invalid state-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Enter email NAO" autofocus>
+                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? '  is-invalid state-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Enter email" autofocus>
 
                     @if ($errors->has('email'))
                         <div class="invalid-feedback"> {{ $errors->first('email') }} </div>
