@@ -18608,3 +18608,10 @@ svg {
 .fe-zoom-out:before {
   content: "\ea06";
 }
+
+a.nav-link:focus:hover { outline: none; }
+a.nav-link:focus { outline: none; }
+a.nav-link:link { outline: none; }
+a.nav-link:visited { outline: none; }
+a.nav-link:hover { outline: none; }
+a.nav-link:active { outline: none; }
