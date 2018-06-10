@@ -22,6 +22,7 @@ class CreateRequirementsTable extends Migration
             $table->boolean('required')->default(0);
             $table->integer('section_id')->nullable()->default(null);
             $table->integer('project_id')->nullable()->default(null);
+            $table->integer('ordering')->default(0);
             $table->timestamps();
         });
     }

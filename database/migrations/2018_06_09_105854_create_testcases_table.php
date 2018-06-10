@@ -25,6 +25,7 @@ class CreateTestcasesTable extends Migration
             $table->text('description')->nullable()->default(null);
             $table->integer('requirement_id');
             $table->integer('user_id');
+            $table->integer('ordering')->default(0);
             $table->timestamps();
         });
     }
