@@ -18,6 +18,12 @@
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <script src="/js/require.min.js"></script>
     <script>
         requirejs.config({
@@ -26,10 +32,11 @@
     </script>
     <!-- Dashboard Core -->
     <link href="/css/dashboard.css" rel="stylesheet" />
-    <script src="/js/dashboard.js"></script>
+    <script src="/js/core.js"></script>
 
     <!-- Input Mask Plugin -->
     <script src="/plugins/input-mask/plugin.js"></script>
+
 </head>
 <body class="">
 <div class="page">

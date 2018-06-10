@@ -12,6 +12,10 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <script src="/js/require.min.js"></script>
     <script>
         requirejs.config({
@@ -24,9 +28,6 @@
     <!-- c3.js Charts Plugin -->
     <link href="/plugins/charts-c3/plugin.css" rel="stylesheet" />
     <script src="/plugins/charts-c3/plugin.js"></script>
-    <!-- Google Maps Plugin -->
-    <link href="/plugins/maps-google/plugin.css" rel="stylesheet" />
-    <script src="/plugins/maps-google/plugin.js"></script>
     <!-- Input Mask Plugin -->
     <script src="/plugins/input-mask/plugin.js"></script>
 
