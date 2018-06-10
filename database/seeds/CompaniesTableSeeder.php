@@ -17,9 +17,5 @@ class CompaniesTableSeeder extends Seeder
             'user_id' => 1
         ]);
 
-        DB::table('companies')->insert([
-            'name' => 'SnipeNet',
-            'user_id' => 1
-        ]);
     }
 }
