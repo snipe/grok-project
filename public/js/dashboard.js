@@ -9,16 +9,16 @@ shim: {
 'core': ['bootstrap', 'jquery'],
 },
 paths: {
-'core': './js/core',
-'jquery': './js/vendors/jquery-3.2.1.min',
-'bootstrap': './js/vendors/bootstrap.bundle.min',
-'sparkline': './js/vendors/jquery.sparkline.min',
-'selectize': './js/vendors/selectize.min',
-'tablesorter': './js/vendors/jquery.tablesorter.min',
-'vector-map': './js/vendors/jquery-jvectormap-2.0.3.min',
-'vector-map-de': './js/vendors/jquery-jvectormap-de-merc',
-'vector-map-world': './js/vendors/jquery-jvectormap-world-mill',
-'circle-progress': './js/vendors/circle-progress.min',
+'core': '/js/core',
+'jquery': '/js/vendors/jquery-3.2.1.min',
+'bootstrap': '/js/vendors/bootstrap.bundle.min',
+'sparkline': '/js/vendors/jquery.sparkline.min',
+'selectize': '/js/vendors/selectize.min',
+'tablesorter': '/js/vendors/jquery.tablesorter.min',
+'vector-map': '/js/vendors/jquery-jvectormap-2.0.3.min',
+'vector-map-de': '/js/vendors/jquery-jvectormap-de-merc',
+'vector-map-world': '/js/vendors/jquery-jvectormap-world-mill',
+'circle-progress': '/js/vendors/circle-progress.min',
 }
 });
 window.tabler = {
