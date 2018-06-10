@@ -2,6 +2,12 @@
 
 @section('content')
     <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">
+                Project: {{ $project->name }}
+            </h1>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div id="mute"></div>
@@ -9,7 +15,7 @@
 
 
                 <div class="card">
-                    <div class="card-header">Project: {{ $project->name }}</div>
+                    <div class="card-header">{{ __('Project') }}: {{ $project->name }}</div>
 
                     <div class="card-body">
                         @if ($project->testenvs->count() > 0)
