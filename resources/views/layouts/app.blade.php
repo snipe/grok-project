@@ -158,6 +158,7 @@
                     </div>
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+
                             <li class="nav-item">
                                 <a href="{{ route('home') }}" class="nav-link"><i class="fe fe-home"></i> {{ __('Home') }}</a>
                             </li>
@@ -173,6 +174,9 @@
                                 </div>
                             </li>
                             @endif
+                            <li class="nav-item">
+                                <a href="{{ route('home') }}" class="nav-link"><i class="fe fe-users"></i> {{ __('Team') }}</a>
+                            </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link"><i class="fe fe-home"></i> {{ __('New Project') }}</a>
                             </li>
