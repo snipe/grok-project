@@ -35,10 +35,16 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'rollbar' => [
+        'access_token' => env('ROLLBAR_TOKEN'),
+        'level' => env('ROLLBAR_LEVEL'),
+    ],
+
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),         // Your GitHub Client ID
         'client_secret' => env('GITHUB_CLIENT_SECRET'), // Your GitHub Client Secret
         'redirect' => 'http://your-callback-url',
     ],
+
 
 ];

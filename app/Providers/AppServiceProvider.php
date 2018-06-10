@@ -24,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Only use Rollbar in production and only register it if there is a rollbar key present
+        if ($this->app->environment('production')) {
+            $this->app->register(\Rollbar\Laravel\RollbarServiceProvider::class);
+        }
     }
 }
