@@ -95,8 +95,12 @@
                                 @foreach($sections as $section)
                                     <tr>
                                         <td>
-                                            <h4>{{ $section->name }}</h4>
+                                            <h4>{{ $section->name }} </h4>
                                             <p>{{ $section->description }}</p>
+
+                                            @foreach($section->requirements as $section_requirement)
+                                                <p>{{ $section_requirement->description }}</p>
+                                            @endforeach
                                         </td>
                                     </tr>
                                     <tr>
@@ -105,16 +109,19 @@
 
                                                 @foreach($section->subsections as $subsection)
                                                     <h5>
-                                                        {{ $subsection->name }}
+                                                        {{ $section->name }} : {{ $subsection->name }}
+                                                        <a class="tag pull-right" data-toggle="collapse" href="#testCase{{ $subsection->id }}" role="button" aria-expanded="false" aria-controls="testCase{{ $subsection->id }}">
+                                                            {{ $subsection->testcases->count() }} Test Cases
+                                                        </a>
                                                     </h5>
                                                     <p>{{ $subsection->description }}</p>
 
+                                                    @foreach($subsection->requirements as $subsection_requirement)
+                                                        <p>{{ $subsection_requirement->description }}</p>
+                                                    @endforeach
+
+
                                                     @if ($subsection->testcases->count() > 0)
-                                                    <p>
-                                                        <a class="tag" data-toggle="collapse" href="#testCase{{ $subsection->id }}" role="button" aria-expanded="false" aria-controls="testCase{{ $subsection->id }}">
-                                                           {{ $subsection->testcases->count() }} Test Cases
-                                                        </a>
-                                                    </p>
 
                                                         <div class="collapse" id="testCase{{ $subsection->id }}">
                                                             <div class="card card-body highlight">
