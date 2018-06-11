@@ -108,12 +108,12 @@
                                             <div class="text-wrap p-lg-6">
 
                                                 @foreach($section->subsections as $subsection)
-                                                    <h5>
+                                                    <h4>
                                                         {{ $section->name }} : {{ $subsection->name }}
                                                         <a class="tag pull-right" data-toggle="collapse" href="#testCase{{ $subsection->id }}" role="button" aria-expanded="false" aria-controls="testCase{{ $subsection->id }}">
                                                             {{ $subsection->testcases->count() }} Test Cases
                                                         </a>
-                                                    </h5>
+                                                    </h4>
                                                     <p>{{ $subsection->description }}</p>
 
                                                     @foreach($subsection->requirements as $subsection_requirement)
