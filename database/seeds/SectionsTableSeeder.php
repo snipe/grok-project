@@ -49,5 +49,16 @@ class SectionsTableSeeder extends Seeder
             'created_at' => date('Y-m-d h:i:s'),
             'updated_at' => date('Y-m-d h:i:s'),
         ]);
+
+        DB::table('sections')->insert([
+            'name' => 'About Page',
+            'description' => 'Company overview with bios, etc.',
+            'project_id' => 1,
+            'user_id' => 1,
+            'created_at' => date('Y-m-d h:i:s'),
+            'updated_at' => date('Y-m-d h:i:s'),
+        ]);
+
+        
     }
 }
