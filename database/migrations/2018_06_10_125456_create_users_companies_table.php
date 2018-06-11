@@ -30,6 +30,14 @@ class CreateUsersCompaniesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('company_id');
+            $table->string('user_role');
+            $table->timestamps();
+        });
+
+        Schema::create('users_projects', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('project_id');
             $table->timestamps();
         });
     }
@@ -43,5 +51,6 @@ class CreateUsersCompaniesTable extends Migration
     {
         Schema::dropIfExists('users_companies_invites');
         Schema::dropIfExists('users_companies');
+        Schema::dropIfExists('users_projects');
     }
 }

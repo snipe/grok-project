@@ -12,7 +12,8 @@
         "laravel/socialite": "^3.0",
         "laravel/tinker": "^1.0",
         "rollbar/rollbar-laravel": "^2.3",
-        "spatie/laravel-slack-slash-command": "^1.6"
+        "spatie/laravel-slack-slash-command": "^1.6",
+        "laracasts/presenter": "0.2.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
@@ -20,7 +21,8 @@
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^2.0",
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^7.0",
+        "roave/security-advisories": "dev-master"
     },
     "autoload": {
         "classmap": [

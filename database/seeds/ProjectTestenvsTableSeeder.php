@@ -25,5 +25,15 @@ class ProjectTestenvsTableSeeder extends Seeder
             'project_id' => 1,
             'test_env_id' => 3,
         ]);
+
+        DB::table('projects_test_envs')->insert([
+            'project_id' => 1,
+            'test_env_id' => 4,
+        ]);
+
+        DB::table('projects_test_envs')->insert([
+            'project_id' => 1,
+            'test_env_id' => 5,
+        ]);
     }
 }

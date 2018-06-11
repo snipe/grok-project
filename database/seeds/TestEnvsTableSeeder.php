@@ -32,10 +32,38 @@ class TestEnvsTableSeeder extends Seeder
         DB::table('test_envs')->insert([
             'env_type' => 'Desktop',
             'browser' => 'Chrome',
-            'browser_version' => '66.0.3359.181',
+            'browser_version' => '66.0',
             'os' => 'MacOS',
             'os_version' => '10.13.5',
             'company_id' => 1,
         ]);
+
+        DB::table('test_envs')->insert([
+            'env_type' => 'Desktop',
+            'browser' => 'Edge',
+            'browser_version' => '9.8',
+            'os' => 'Windows',
+            'os_version' => '10',
+            'company_id' => 1,
+        ]);
+
+        DB::table('test_envs')->insert([
+            'env_type' => 'Tablet',
+            'browser' => 'Safari',
+            'browser_version' => '9.8',
+            'os' => 'iOS',
+            'os_version' => '12',
+            'company_id' => 1,
+        ]);
+
+        DB::table('test_envs')->insert([
+            'env_type' => 'Phone',
+            'browser' => 'Safari',
+            'browser_version' => '9.8',
+            'os' => 'iOS',
+            'os_version' => '12',
+            'company_id' => 1,
+        ]);
+
     }
 }

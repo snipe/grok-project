@@ -1,120 +1,158 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="page-header">
-            <h1 class="page-title">
-                Project: {{ $project->name }}
-            </h1>
-        </div>
 
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div id="mute"></div>
-                <div id="app"></div>
+    <div class="my-3 my-md-5">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">
+                    {{ __('Project') }}: {{ $project->name }}
+                </h1>
+            </div>
 
-
-                <div class="card">
-                    <div class="card-header">{{ __('Project') }}: {{ $project->name }}</div>
-
-                    <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">{{ __('Browsers') }} <span class="tag">{{ $project->testenvs->count()  }}</span></h4>
+                        </div>
                         @if ($project->testenvs->count() > 0)
-                            <h4>Test Environments</h4>
-                            <ol>
+                        <table class="table card-table">
                             @foreach($project->testenvs as $testenv)
-                                <li>{{ $testenv->env_type }} - {{ $testenv->browser }} {{ $testenv->browser_version }} ({{ $testenv->os }} {{ $testenv->os_version }})</li>
-
-                            @endforeach
-                            </ol>
+                            <tr>
+                                <td><i class="{{ $testenv->present()->osTypeIcon }} text-muted"></i></td>
+                                <td><i class="{{ $testenv->present()->browserIcon }} text-muted"></i></td>
+                                <td>{{ $testenv->browser }}</td>
+                                <td class="text-right">
+                                    <span class="text-muted">
+                                        <i class="{{ $testenv->present()->osIcon }} text-muted"></i>
+                                    </span>
+                                </td>
+                                <td class="text-right">
+                                    <span class="text-muted">
+                                        {{ $testenv->os_version }}
+                                    </span>
+                                </td>
+                            </tr>
+                         @endforeach
+                        </table>
                         @endif
-
-
-                        @if ($sections->count() > 0)
-                            <table class="table">
-                                @foreach($sections as $section)
-                                    <tr>
-                                        <td>
-                                           <h4>{{ $section->name }}</h4>
-
-                                            @if ($section->requirements->count() > 0)
-
-                                                @foreach($section->requirements as $requirement)
-                                                    <p><strong>Requirements:</strong>
-                                                        <br>
-                                                        {{ $requirement->description }}</p>
-
-                                                    @if ($section->testcases->count())
-                                                        <h5>Test Cases</h5>
-
-                                                        @foreach($section->testcases as $testcase)
-                                                            <ol>
-                                                            <li>Auth: {{ ($testcase->auth_status=='0') ? 'Not Logged In' : 'Logged In' }}</li>
-                                                            <li>On: {{ $testcase->am_on }}</li>
-                                                            <li>Action: {{ $testcase->action }} {{ $testcase->element }}</li>
-                                                            <li>Should See: {{ $testcase->should_see
-                                                            }}</li>
-                                                            </ol>
-                                                        @endforeach
-
-                                                    @endif
-
-
-
-                                                @endforeach
-
-                                            @endif
-                                        </td>
-                                    </tr>
+                    </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ __('Project Members') }} </h3>
+                    </div>
+                    <div class="card-body o-auto" style="height: 15rem">
+                        @if ($project->members->count() > 0)
+                        <ul class="list-unstyled list-separated">
+                            @foreach($project->members as $member)
+                            <li class="list-separated-item">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span class="avatar avatar-md d-block" style="background-image: url({{ $member->avatar() }})"></span>
+                                    </div>
+                                    <div class="col">
+                                        <div>
+                                            <a href="javascript:void(0)" class="text-inherit">{{ $member->name }}</a>
+                                        </div>
+                                        <small class="d-block item-except text-sm text-muted h-1x">{{ $member->email }}</small>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="item-action dropdown">
+                                            <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                                                <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                                <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                                 @endforeach
-                                @if (($section->subsections) && ($section->subsections->count() > 0))
-
-                                            @foreach($section->subsections as $subsection)
-                                                <tr>
-                                                    <td>
-                                                        <h5>{{ $subsection->name }}</h5>
-
-                                                        @if ($subsection->requirements->count() > 0)
-
-                                                            @foreach($subsection->requirements as $requirement)
-                                                                <p><strong>Requirements:</strong>
-                                                                    <br>
-                                                                    {{ $requirement->description }}</p>
-
-                                                                @if ($subsection->testcases->count())
-                                                                    <h5>Test Cases</h5>
-
-                                                                    @foreach($subsection->testcases as $testcase)
-                                                                        <ol>
-                                                                            <li>Auth: {{ ($testcase->auth_status=='0') ? 'Not Logged In' : 'Logged In' }}</li>
-                                                                            <li>On: {{ $testcase->am_on }}</li>
-                                                                            <li>Action: {{ $testcase->action }} {{ $testcase->element }}</li>
-                                                                            <li>Should See: {{ $testcase->should_see
-                                                            }}</li>
-                                                                        </ol>
-                                                                    @endforeach
-
-                                                                @endif
-
-
-
-                                                            @endforeach
-
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-
-                                    @endif
-
-
-                            </table>
-
-                        @else
-                            You don't have any requirements set up yet.
+                        </ul>
                         @endif
                     </div>
                 </div>
             </div>
+
+                <!-- Requirements -->
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">{{ __('Requirements') }} <span class="tag">{{ $sections->count() }}</span></h4>
+                        </div>
+                        <table class="table card-table">
+
+                            @if ($sections->count() > 0)
+                                @foreach($sections as $section)
+                                    <tr>
+                                        <td>
+                                        <div class="media">
+                                            <div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/16.jpg)">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="media-heading">
+                                                    <small class="float-right text-muted">
+                                                        {{ ($section->created_at) ? $section->created_at->diffForHumans() : '' }}
+                                                    </small>
+                                                    <h3>
+                                                        {{ $section->name }}
+                                                    </h3>
+
+                                                    <div>
+                                                        <p>{{ $section->description }}</p>
+                                                    </div>
+                                                </div>
+                                                @foreach($section->requirements as $requirement)
+                                                <div>
+                                                    <hr>
+                                                    <h4>{{ $requirement->name }}</h4>
+                                                    <p>{{ $requirement->description }}</p>
+                                                </div>
+                                                @endforeach
+
+                                                @foreach($section->subsections as $subsection)
+                                                    <h5>
+                                                        {{ $subsection->name }}
+                                                    </h5>
+                                                    <p>{{ $subsection->description }}</p>
+
+                                                    @if ($subsection->testcases->count())
+                                                        <h5>Test Cases</h5>
+
+                                                        @foreach($subsection->testcases as $testcase)
+                                                            <ol>
+                                                                <li>Auth: {{ ($testcase->auth_status=='0') ? 'Not Logged In' : 'Logged In' }}</li>
+                                                                <li>On: {{ $testcase->am_on }}</li>
+                                                                <li>Action: {{ $testcase->action }} {{ $testcase->element }}</li>
+                                                                <li>Should See: {{ $testcase->should_see
+                                                            }}</li>
+                                                            </ol>
+                                                        @endforeach
+                                                    @endif
+                                                 @endforeach
+
+
+                                            </div>
+                                        </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+
+                        </table>
+                    </div>
+
+            </div>
         </div>
     </div>
+
+
+
+
+
+
 @endsection

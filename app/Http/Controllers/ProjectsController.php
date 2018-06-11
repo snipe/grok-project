@@ -16,9 +16,15 @@ class ProjectsController extends Controller
     }
 
     public function show($project_id) {
-        $project = Project::with('testenvs')->find($project_id);
+        $project = Project::with('testenvs', 'members')->find($project_id);
         $sections = Section::where('project_id', $project_id)->where('parent_id',0)->with('requirements', 'testcases', 'subsections')->get();
         return view('projects.show')->with('sections', $sections)->with('project', $project);
+    }
+
+    public function tests($project_id) {
+        $project = Project::with('testenvs')->find($project_id);
+        $sections = Section::where('project_id', $project_id)->where('parent_id',0)->with('requirements', 'testcases', 'subsections')->get();
+        return view('projects.tests')->with('sections', $sections)->with('project', $project);
     }
 
     public function create(Request $request)

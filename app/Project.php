@@ -32,5 +32,9 @@ class Project extends Model
             'project_id', 'test_env_id');
     }
 
-
+    public function members()
+    {
+        return $this->belongsToMany('App\User', 'users_projects');
+        //return $this->hasMany('\App\User', 'id', 'user_id');
+    }
 }
