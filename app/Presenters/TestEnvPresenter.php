@@ -19,6 +19,9 @@ class TestEnvPresenter extends Presenter {
             case 'safari':
                 return 'fa fa-safari';
                 break;
+            case 'opera':
+                return 'fa fa-opera';
+                break;
             case 'chrome':
                 return 'fa fa-chrome';
                 break;

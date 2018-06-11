@@ -59,6 +59,6 @@ class SectionsTableSeeder extends Seeder
             'updated_at' => date('Y-m-d h:i:s'),
         ]);
 
-        
+
     }
 }

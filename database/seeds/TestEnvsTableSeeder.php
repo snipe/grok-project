@@ -22,7 +22,7 @@ class TestEnvsTableSeeder extends Seeder
 
         DB::table('test_envs')->insert([
             'env_type' => 'Desktop',
-            'browser' => 'Brave',
+            'browser' => 'Opera',
             'browser_version' => '0.22.727',
             'os' => 'MacOS',
             'os_version' => '10.13.5',
