@@ -174,9 +174,15 @@
                                 </div>
                             </li>
                             @endif
+                            @if (isset($project))
+                            <li class="nav-item">
+                                <a href="{{ route('project.tests', ['id' => $project->id]) }}" class="nav-link"><i class="fe fe-users"></i> {{ __('Tests') }}</a>
+                            </li>
                             <li class="nav-item">
                                 <a href="{{ route('home') }}" class="nav-link"><i class="fe fe-users"></i> {{ __('Team') }}</a>
                             </li>
+                            @endif
+
                             <li class="nav-item">
                                 <a href="#" class="nav-link"><i class="fe fe-home"></i> {{ __('New Project') }}</a>
                             </li>
