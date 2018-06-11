@@ -36,9 +36,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group([ 'prefix' => 'projects'], function () {
 
-        Route::get('/tests', function () {
-            return view('projects.tests');
-        })->name('project.tests');
+        Route::get('{id}/tests', [
+            'uses' => 'ProjectsController@tests'
+        ])->name('project.tests');
+
 
     });
 
