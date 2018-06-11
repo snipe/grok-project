@@ -33,9 +33,20 @@ Route::group(['middleware' => 'auth'], function () {
     /*
     * Projects
     */
+
+    Route::group([ 'prefix' => 'projects'], function () {
+
+        Route::get('/tests', function () {
+            return view('projects.tests');
+        })->name('project.tests');
+
+    });
+
     Route::resource('project', 'ProjectsController', [
         'parameters' => ['project' => 'project_id']
     ]);
+
+
 
 });
 
