@@ -6,6 +6,10 @@ use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 
 class EncryptCookies extends Middleware
 {
+
+    // Added for Laravel 5.7
+    protected static $serialize = true;
+
     /**
      * The names of the cookies that should not be encrypted.
      *
